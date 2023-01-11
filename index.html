@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheet.css"> 
+    <title>Instagram Login Layout</title>
+</head>
+<body>
+    
+    <div class="maincontainer">
+    <div class="allimages"> 
+        <div id="iphoneimages">
+           <div> <img class="img" src="images/screen1.png" width="325px" height="672px" alt=""> </div>
+           <div> <img class="img" src="images/screen2.png" width="325px" height="672px" alt=""> </div>
+           <div> <img class="img" src="images/screen3.png" width="325px" height="672px" alt=""> </div>
+    </div>
+    <div>
+        <img class="img2" src="images/iphone.png" width="600px" height="800px" alt="">
+    </div>
+    </div>
+
+
+    <div class="info">
+    <div class="instabox">
+        <div class="forum">
+            <div class="forumcontent">
+                <div class="name"> <img src="images/instaname.png" width="220px" height="90px" alt=""> </div>
+                <input type="user" class="rounded-input" placeholder="Phone number, username, or email">
+                <input type="password" class="rounded-input" placeholder="Password">
+                <button>Log in</button>
+                <div class="line">OR</div>
+                <div class="facebook"> <a> <img src="images/fblogo.jpeg" width="20px" height="20px"> Log in to Facebook </a></div>
+                <a class="pass">Forgot Password?</a>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="signbox">
+        <div class="signup">
+            <p>Don't have an account? <a class="sign">Sign up</a></p>
+        </div>
+    </div>
+
+    <div class="app">
+        <div class="apptext"> <p>Get the app.</p></div>
+        <div class="appimg">
+            <img src="images/appstore.jpeg" width="150px" height="50px" alt="">
+            <img src="images/googleplay.jpeg" width="150px" height="50px" alt="">
+        </div>
+        
+    </div>
+
+    </div>
+
+    </div>
+
+    <div class="links">
+        <div><a>Meta</a></div>
+        <div><a>About</a></div>
+        <div><a>Blog</a></div>
+        <div><a>Jobs</a></div>
+        <div><a>Help</a></div>
+        <div><a>API</a></div>
+        <div><a>Privacy</a></div>
+        <div><a>Terms</a></div>
+        <div><a>Top Accounts</a></div>
+        <div><a>Locations</a></div>
+        <div><a>Instagram Lite</a></div>
+        <div><a>Contact Uploading & Non-Users</a></div>
+    </div>
+
+    <div class="linkstwo">
+        <div><a>English</a></div>
+        <div><a>@ 2023 Instagram from Meta</a></div>
+    </div>
+
+
+    
+    <script>
+        var iphoneimages = document.getElementById("iphoneimages");
+        var arr = Array.prototype.slice.call(iphoneimages.children);
+
+        arr.map(function(imgObj) {
+            imgObj.classList.add("iphoneimages-img");
+        });
+
+        arr[0].classList.add("show");
+
+        var currentIPhoneImages = 1;
+        var iphoneImagesLength = iphoneimages.children.length;
+        var prevIphoneImage = 0;
+
+        setInterval(function() {
+            if(currentIPhoneImages >= iphoneImagesLength)
+            currentIPhoneImages = 0;
+
+            arr[prevIphoneImage].classList.remove("show");
+            arr[currentIPhoneImages].classList.add("show");
+
+            prevIphoneImage = currentIPhoneImages;
+            currentIPhoneImages++;
+        }, 4000)
+    </script>
+</body>
+</html>
